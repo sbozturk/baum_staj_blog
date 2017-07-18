@@ -10,7 +10,12 @@
             </form>
          </div>
 
-  <?php require_once "categories.php"; ?>
+         <div class="widget widget_categories group">
+           <h3>Categories.</h3>
+           <?php require_once "categories.php"; ?>
+         </div>
+
+
 
   <div class="widget widget_text group">
     <h3>Widget Text.</h3>
