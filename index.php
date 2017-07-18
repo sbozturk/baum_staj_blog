@@ -13,7 +13,7 @@
 
       <div id="main" class="eight columns">
           <?php
-          $query = $db -> query("SELECT * FROM b_gonderiler ORDER BY tarih DESC", PDO::FETCH_ASSOC);
+          $query = $db -> query("SELECT * FROM article ORDER BY time DESC", PDO::FETCH_ASSOC);
           if ($query->rowCount()) {
             foreach ($query as $row) { ?>
 
@@ -22,12 +22,12 @@
                 <header class="entry-header">
 
                   <h2 class="entry-title">
-                    <a href="single.php" title=""><?php echo $row["baslik"];?></a>
+                    <a href="single.php" title=""><?php echo $row["name"];?></a>
                   </h2>
 
                   <div class="entry-meta">
                     <ul>
-                      <li><?php echo $row["tarih"]; ?></li>
+                      <li><?php echo $row["time"]; ?></li>
                       <span class="meta-sep">&bull;</span>
                       <li><a href="#" title="" rel="category tag">Ghost</a></li>
                       <span class="meta-sep">&bull;</span>
@@ -38,7 +38,7 @@
                 </header>
 
                 <div class="entry-content">
-                  <p><?php echo $row["icerik"]; ?></p>
+                  <p><?php echo $row["content"]; ?></p>
                 </div>
 
               </article> <!-- end entry -->
