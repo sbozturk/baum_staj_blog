@@ -22,7 +22,7 @@
    <div class="row">
 
        <ul id="nav" class="nav">
-           <li class="current"><a href="index.html">Home</a></li>
+           <li><a href="index.php">Home</a></li>
            <li class="has-children"><a href="#">Dropdown</a>
                  <ul>
                     <li><a href="#">Submenu 01</a></li>
@@ -30,15 +30,15 @@
                     <li><a href="#">Submenu 03</a></li>
                  </ul>
               </li>
-              <li><a href="demo.html">Demo</a></li>
-              <li><a href="archives.html">Archives</a></li>
-           <li class="has-children"><a href="single.html">Blog</a>
+              <li><a href="demo.php">Demo</a></li>
+              <li><a href="archives.php">Archives</a></li>
+           <li class="has-children"><a href="single.php">Blog</a>
            <ul>
-                    <li><a href="blog.html">Blog Entries</a></li>
-                    <li><a href="single.html">Single Blog</a></li>
+                    <li><a href="blog.php">Blog Entries</a></li>
+                    <li><a href="single.php">Single Blog</a></li>
                  </ul>
            </li>
-           <li><a href="page.html">Page</a></li>
+           <li><a href="page.php">Page</a></li>
        </ul> <!-- end #nav -->
 
    </div>
