@@ -12,7 +12,7 @@
 
          <div class="widget widget_categories group">
            <h3>Categories.</h3>
-           <?php require_once "categories.php"; ?>
+           <?php include "categories.php"; ?>
          </div>
 
 
