@@ -7,7 +7,7 @@
 
    <div class="header-content twelve columns">
 
-       <h1 id="logo-text"><a href="index.html" title="">Keep It Simple.</a></h1>
+       <h1 id="logo-text"><a href="index.php" title="">Keep It Simple.</a></h1>
      <p id="intro">Put your awesome slogan here...</p>
 
    </div>
