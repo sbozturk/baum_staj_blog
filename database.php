@@ -1,6 +1,6 @@
 <?php
 $dbhost = "localhost";
-$dbname = "tema_blog";
+$dbname = "baum_staj_proje";
 $user = "root";
 $pass = "";
 try {
@@ -9,5 +9,5 @@ try {
 } catch (PDOException $e) {
     print $e -> getMessage();
 }
-$query = $db -> query("SELECT * FROM b_gonderiler ORDER BY tarih DESC")->fetchAll(PDO::FETCH_ASSOC);
+$query = $db -> query("SELECT * FROM article ORDER BY time DESC")->fetchAll(PDO::FETCH_ASSOC);
 ?>
