@@ -1,5 +1,6 @@
 <!-- Header
 ================================================== -->
+<?php require_once "database.php"; ?>
 <header id="top">
 
  <div class="row">
