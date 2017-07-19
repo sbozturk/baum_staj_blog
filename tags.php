@@ -2,13 +2,15 @@
        <h3>Post Tags.</h3>
 
        <div class="tagcloud group">
-          <a href="#">Corporate</a>
-          <a href="#">Onepage</a>
-          <a href="#">Agency</a>
-          <a href="#">Multipurpose</a>
-          <a href="#">Blog</a>
-          <a href="#">Landing Page</a>
-          <a href="#">Resume</a>
+         <?php
+         $query = $db -> query("SELECT * FROM tag", PDO::FETCH_ASSOC);
+         if ($query->rowCount()) {
+           foreach ($query as $row) { ?>
+          <a href="#"><?php echo $row["name"];?></a>
+          <?php
+                      }
+                    }
+                    ?>
        </div>
 
     </div>

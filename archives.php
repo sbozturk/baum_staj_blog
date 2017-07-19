@@ -29,20 +29,17 @@
 						<div class="twelve columns">
 
 							<h4>Last 10 Posts.</h4>
-
+              <?php
+              $query = $db -> query("SELECT * FROM article ORDER BY aid DESC LIMIT 10", PDO::FETCH_ASSOC);
+              if ($query->rowCount()) {
+                foreach ($query as $row) { ?>
 				      	<ul>
-				      		<li><a href="">Dolor irure velit commodo cillum sit nulla</a></li>
-				      		<li><a href="">laborum mollit quis nostrud sed</a></li>
-				      		<li><a href="">consequat occaecat fugiat in adipisicing</a></li>
-				      		<li><a href="">qui labore cillum sit in tempor veniam consequat</a></li>
-				      		<li><a href="">quis nostrud sed sed</a></li>
-				      		<li><a href="">quis proident ullamco ut dolore</a></li>
-				      		<li><a href="">Dolor irure velit commodo cillum sit nulla</a></li>
-				      		<li><a href="">veniam dolor dolor irure velit commodo cillum</a></li>
-				      		<li><a href="">Dolor irure velit commodo cillum sit nulla</a></li>
-				      		<li><a href="">voluptate enim veniam consequat occaecat</a></li>
+				      		<li><a href=""><?php echo $row["name"];?></a></li>
 				      	</ul>
-
+                <?php
+                            }
+                          }
+                          ?>
 						</div>
 
 						<div class="twelve columns">
@@ -76,16 +73,21 @@
 						<div class="twelve columns">
 
 							<h4>Site Map.</h4>
-
+              <?php
+              $query = $db -> query("SELECT * FROM menu", PDO::FETCH_ASSOC);
+              if ($query->rowCount()) {
+                foreach ($query as $row) { ?>
 				      	<ul>
-				      		<li><a href="">Archives</a></li>
-				      		<li><a href="">Home</a></li>
-				      		<li><a href="">About Us</a></li>
-				      		<li><a href="">Blog</a></li>
-				      		<li><a href="">Demo</a></li>
-				      		<li><a href="">Other Stuff</a></li>
+				      		<li><a href=""><?php $name = $row["name"];
+                  $name = strtolower($name);
+                  $name = ucwords($name);
+                  echo $name;
+                  ?></a></li>
 				      	</ul>
-
+                <?php
+                            }
+                          }
+                          ?>
 						</div>
 
 			      </div>

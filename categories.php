@@ -1,8 +1,14 @@
 <ul>
-  <li><a href="#" title="">Wordpress</a> (2)</li>
-  <li><a href="#" title="">Ghost</a> (14)</li>
-  <li><a href="#" title="">Joomla</a> (5)</li>
-  <li><a href="#" title="">Drupal</a> (3)</li>
-  <li><a href="#" title="">Magento</a> (2)</li>
-  <li><a href="#" title="">Uncategorized</a> (9)</li>
+  <?php
+  $query = $db -> query("SELECT category.name, COUNT(*) AS number
+      FROM article INNER JOIN category
+  		ON article.category=category.cid
+  		GROUP BY cid", PDO::FETCH_ASSOC);
+  if ($query->rowCount()) {
+    foreach ($query as $row) { ?>
+  <li><a href="#" title=""><?php echo $row["name"];?></a> (<?php echo $row["number"];?>)</li>
+  <?php
+              }
+            }
+            ?>
 </ul>
