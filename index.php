@@ -13,7 +13,9 @@
 
       <div id="main" class="eight columns">
           <?php
-          $query = $db -> query("SELECT * FROM article ORDER BY time DESC", PDO::FETCH_ASSOC);
+          $query = $db -> query("SELECT * FROM article
+          INNER JOIN category ON category.cid = article.articleCategory
+          INNER JOIN user ON user.uid = article.articleUser ORDER BY articleTime DESC", PDO::FETCH_ASSOC);
           if ($query->rowCount()) {
             foreach ($query as $row) { ?>
 
@@ -22,23 +24,24 @@
                 <header class="entry-header">
 
                   <h2 class="entry-title">
-                    <a href="single.php" title=""><?php echo $row["name"];?></a>
+                    <a href="single.php" title=""><?php echo $row["articleName"];?></a>
                   </h2>
 
                   <div class="entry-meta">
                     <ul>
-                      <li><?php echo $row["time"]; ?></li>
+                      <li><?php echo $row["articleTime"]; ?></li>
                       <span class="meta-sep">&bull;</span>
-                      <li><a href="#" title="" rel="category tag">Ghost</a></li>
+
+                      <li><a href="#" title="" rel="category tag"><?php echo $row["categoryName"];?></a></li>
                       <span class="meta-sep">&bull;</span>
-                      <li>John Doe</li>
+                      <li><?php echo $row["userName"];?> <?php echo $row["userSurname"];?></li>
                     </ul>
                   </div>
 
                 </header>
 
                 <div class="entry-content">
-                  <p><?php echo $row["content"]; ?></p>
+                  <p><?php echo $row["articleContent"]; ?></p>
                 </div>
 
               </article> <!-- end entry -->

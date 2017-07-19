@@ -30,11 +30,11 @@
 
 							<h4>Last 10 Posts.</h4>
               <?php
-              $query = $db -> query("SELECT * FROM article ORDER BY aid DESC LIMIT 10", PDO::FETCH_ASSOC);
+              $query = $db -> query("SELECT * FROM article ORDER BY articleTime DESC LIMIT 10", PDO::FETCH_ASSOC);
               if ($query->rowCount()) {
                 foreach ($query as $row) { ?>
 				      	<ul>
-				      		<li><a href=""><?php echo $row["name"];?></a></li>
+				      		<li><a href=""><?php echo $row["articleName"];?></a></li>
 				      	</ul>
                 <?php
                             }
@@ -78,7 +78,7 @@
               if ($query->rowCount()) {
                 foreach ($query as $row) { ?>
 				      	<ul>
-				      		<li><a href=""><?php $name = $row["name"];
+				      		<li><a href="<?php echo $row["menuFolderName"];?>.php"><?php $name = $row["menuName"];
                   $name = strtolower($name);
                   $name = ucwords($name);
                   echo $name;

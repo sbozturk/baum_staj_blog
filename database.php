@@ -9,5 +9,5 @@ try {
 } catch (PDOException $e) {
     print $e -> getMessage();
 }
-$query = $db -> query("SELECT * FROM article ORDER BY time DESC")->fetchAll(PDO::FETCH_ASSOC);
+$query = $db -> query("SELECT * FROM article ORDER BY articleTime DESC")->fetchAll(PDO::FETCH_ASSOC);
 ?>

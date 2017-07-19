@@ -1,12 +1,12 @@
 <ul>
   <?php
-  $query = $db -> query("SELECT category.name, COUNT(*) AS number
+  $query = $db -> query("SELECT category.categoryName, COUNT(*) AS number
       FROM article INNER JOIN category
-  		ON article.category=category.cid
+  		ON article.articleCategory=category.cid
   		GROUP BY cid", PDO::FETCH_ASSOC);
   if ($query->rowCount()) {
     foreach ($query as $row) { ?>
-  <li><a href="#" title=""><?php echo $row["name"];?></a> (<?php echo $row["number"];?>)</li>
+  <li><a href="#" title=""><?php echo $row["categoryName"];?></a> (<?php echo $row["number"];?>)</li>
   <?php
               }
             }

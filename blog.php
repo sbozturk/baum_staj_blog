@@ -18,117 +18,43 @@
 
    		<div id="main" class="eight columns">
 
+        <?php
+        $query = $db -> query("SELECT * FROM article
+        INNER JOIN category ON category.cid = article.articleCategory
+        INNER JOIN user ON user.uid = article.articleUser WHERE article.articleCategory=7 ORDER BY articleTime DESC LIMIT 5", PDO::FETCH_ASSOC);
+        if ($query->rowCount()) {
+          foreach ($query as $row) { ?>
+
 	   		<article class="entry">
 
 					<header class="entry-header">
 
 						<h2 class="entry-title">
-							<a href="single.html" title="">Hey, We Love Open Sans!</a>
+							<a href="single.html" title=""><?php echo $row["articleName"];?></a>
 						</h2>
 
 						<div class="entry-meta">
 							<ul>
-								<li>July 12, 2014</li>
+								<li><?php echo $row["articleTime"];?></li>
 								<span class="meta-sep">&bull;</span>
-								<li><a href="#" title="" rel="category tag">Ghost</a></li>
+								<li><a href="#" title="" rel="category tag"><?php echo $row["categoryName"];?></a></li>
 								<span class="meta-sep">&bull;</span>
-								<li>John Doe</li>
+								<li><?php echo $row["userName"];?> <?php echo $row["userSurname"];?></li>
 							</ul>
 						</div>
 
 					</header>
 
 					<div class="entry-content">
-						<p>Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi est eu exercitation incididunt adipisicing veniam velit id fugiat enim mollit amet anim veniam dolor dolor irure velit commodo cillum sit nulla ullamco magna amet magna cupidatat qui labore cillum sit in tempor veniam consequat non laborum adipisicing aliqua ea nisi sint ut quis proident ullamco ut dolore culpa occaecat ut laboris in sit minim cupidatat ut dolor voluptate enim veniam consequat occaecat fugiat in adipisicing in amet Ut nulla nisi non ut enim aliqua laborum mollit quis nostrud sed sed.</p>
+						<p><?php echo $row["articleContent"];?></p>
 					</div>
 
 				</article> <!-- end entry -->
+        <?php
+                    }
+                  }
+                  ?>
 
-				<article class="entry">
-
-					<header class="entry-header">
-
-						<h2 class="entry-title">
-							<a href="single.html" title="">We All Love Good Typography.</a>
-						</h2>
-
-						<div class="entry-meta">
-							<ul>
-								<li>July 11, 2014</li>
-								<span class="meta-sep">&bull;</span>
-								<li>
-									<a href="#" title="" rel="category tag">Wordpress</a>,
-									<a href="#" title="" rel="category tag">Ghost</a>
-								</li>
-								<span class="meta-sep">&bull;</span>
-								<li>Jane Doe</li>
-							</ul>
-						</div>
-
-					</header>
-
-					<div class="entry-content">
-						<p>Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi est eu exercitation incididunt adipisicing veniam velit id fugiat enim mollit amet anim veniam dolor dolor irure velit commodo cillum sit nulla ullamco magna amet magna cupidatat qui labore cillum sit in tempor veniam consequat non laborum adipisicing aliqua ea nisi sint ut quis proident ullamco ut dolore culpa occaecat ut laboris in sit minim cupidatat ut dolor voluptate enim veniam consequat occaecat fugiat in.</p>
-					</div>
-
-				</article> <!-- end entry -->
-
-				<article class="entry">
-
-					<header class="entry-header">
-
-						<h2 class="entry-title">
-							<a href="single.html" title="">White Space Everywhere.</a>
-						</h2>
-
-						<div class="entry-meta">
-							<ul>
-								<li>July 10, 2014</li>
-								<span class="meta-sep">&bull;</span>
-								<li>
-									<a href="#" title="" rel="category tag">Joomla</a>,
-									<a href="#" title="" rel="category tag">Drupal</a>
-								</li>
-								<span class="meta-sep">&bull;</span>
-								<li>Naruto Uzumaki</li>
-							</ul>
-						</div>
-
-					</header>
-
-					<div class="entry-content">
-						<p>Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi est eu exercitation incididunt adipisicing veniam velit id fugiat enim mollit amet anim veniam dolor dolor irure velit commodo cillum sit nulla ullamco magna amet magna cupidatat qui labore cillum sit in tempor veniam consequat non laborum adipisicing aliqua ea nisi sint ut quis proident ullamco ut dolore culpa occaecat ut laboris in sit minim cupidatat ut dolor voluptate enim veniam consequat occaecat fugiat in adipisicing in amet Ut nulla nisi non ut enim aliqua laborum mollit quis nostrud sed sed.</p>
-					</div>
-
-				</article> <!-- end entry -->
-
-				<article class="entry">
-
-					<header class="entry-header">
-
-						<h2 class="entry-title">
-							<a href="single.html" title="">Simple And Minimalist Designs.</a>
-						</h2>
-
-						<div class="entry-meta">
-							<ul>
-								<li>July 09, 2014</li>
-								<span class="meta-sep">&bull;</span>
-								<li>
-									<a href="#" title="" rel="category tag">Ghost</a>
-								</li>
-								<span class="meta-sep">&bull;</span>
-								<li>Naruto Uzumaki</li>
-							</ul>
-						</div>
-
-					</header>
-
-					<div class="entry-content">
-						<p>Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi est eu exercitation incididunt adipisicing veniam velit id fugiat enim mollit amet anim veniam dolor dolor irure velit commodo cillum sit nulla ullamco magna amet magna cupidatat qui labore cillum sit in tempor veniam consequat non laborum adipisicing aliqua ea nisi sint ut quis proident ullamco ut dolore culpa occaecat ut laboris in sit minim cupidatat ut dolor voluptate enim veniam consequat occaecat fugiat in adipisicing in amet Ut nulla nisi non ut enim aliqua laborum mollit quis nostrud sed sed.</p>
-					</div>
-
-				</article> <!-- end entry -->
 
 				<div class="pagenav">
 	            <p>

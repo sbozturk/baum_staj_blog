@@ -26,7 +26,7 @@
        foreach ($query as $row) { ?>
 
        <ul id="nav" class="nav">
-           <li><a href="<?php echo $row["folderName"];?>.php"><?php echo $row["name"];?></a></li>
+           <li><a href="<?php echo $row["menuFolderName"];?>.php"><?php echo $row["menuName"];?></a></li>
 
        </ul> <!-- end #nav -->
        <?php

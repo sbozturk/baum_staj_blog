@@ -49,14 +49,17 @@
 
       <div class="two columns">
          <h3 class="social">Navigate</h3>
-
+         <?php
+         $query = $db -> query("SELECT * FROM menu", PDO::FETCH_ASSOC);
+         if ($query->rowCount()) {
+           foreach ($query as $row) { ?>
          <ul class="navigate group">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Demo</a></li>
-            <li><a href="#">Archives</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="<?php echo $row["menuFolderName"];?>.php"><?php echo $row["menuName"];?></a></li>
          </ul>
+         <?php
+                     }
+                   }
+                   ?>
       </div>
 
       <p class="copyright">&copy; Copyright 2014 Keep It Simple. &nbsp; Design by <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a>.</p>
