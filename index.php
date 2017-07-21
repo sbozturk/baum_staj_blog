@@ -24,7 +24,7 @@
                 <header class="entry-header">
 
                   <h2 class="entry-title">
-                    <a href="single.php" title=""><?php echo $row["articleName"];?></a>
+                    <a href="single.php?article=<?php echo $row["aid"];?>" title=""><?php echo $row["articleName"];?></a>
                   </h2>
 
                   <div class="entry-meta">
@@ -32,7 +32,7 @@
                       <li><?php echo $row["articleTime"]; ?></li>
                       <span class="meta-sep">&bull;</span>
 
-                      <li><a href="#" title="" rel="category tag"><?php echo $row["categoryName"];?></a></li>
+                      <li><a href="categoryPage.php?category=<?php echo $row["categoryName"];?>" title="" rel="category tag"><?php echo $row["categoryName"];?></a></li>
                       <span class="meta-sep">&bull;</span>
                       <li><?php echo $row["userName"];?> <?php echo $row["userSurname"];?></li>
                     </ul>

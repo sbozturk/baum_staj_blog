@@ -30,7 +30,7 @@
 					<header class="entry-header">
 
 						<h2 class="entry-title">
-							<a href="single.html" title=""><?php echo $row["articleName"];?></a>
+							<a href="single.php?article=<?php echo $row["aid"];?>" title=""><?php echo $row["articleName"];?></a>
 						</h2>
 
 						<div class="entry-meta">

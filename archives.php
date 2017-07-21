@@ -34,7 +34,7 @@
               if ($query->rowCount()) {
                 foreach ($query as $row) { ?>
 				      	<ul>
-				      		<li><a href=""><?php echo $row["articleName"];?></a></li>
+				      		<li><a href="single.php?article=<?php echo $row["aid"];?>"><?php echo $row["articleName"];?></a></li>
 				      	</ul>
                 <?php
                             }

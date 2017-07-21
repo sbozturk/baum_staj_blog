@@ -6,13 +6,38 @@
 
      <div class="twelve columns">
      <ul class="social-links">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-github-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-flickr"></i></a></li>
-            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+            <li><a href="
+              <?php
+              $query = $db -> query("SELECT * FROM social where smid = '1' ", PDO::FETCH_ASSOC);
+              if ($query->rowCount()) {
+                foreach ($query as $row) {
+                  echo $row["socialUsername"];
+                }} ?>
+              "><i class="fa fa-facebook"></i></a></li>
+            <li><a href="
+              <?php
+              $query = $db -> query("SELECT * FROM social where smid = '2' ", PDO::FETCH_ASSOC);
+              if ($query->rowCount()) {
+                foreach ($query as $row) {
+                  echo $row["socialUsername"];
+                }} ?>
+              "><i class="fa fa-twitter"></i></a></li>
+            <li><a href="
+              <?php
+              $query = $db -> query("SELECT * FROM social where smid = '3' ", PDO::FETCH_ASSOC);
+              if ($query->rowCount()) {
+                foreach ($query as $row) {
+                  echo $row["socialUsername"];
+                }} ?>
+              "><i class="fa fa-github-square"></i></a></li>
+            <li><a href="
+              <?php
+              $query = $db -> query("SELECT * FROM social where smid = '4' ", PDO::FETCH_ASSOC);
+              if ($query->rowCount()) {
+                foreach ($query as $row) {
+                  echo $row["socialUsername"];
+                }} ?>
+              "><i class="fa fa-instagram"></i></a></li>
          </ul>
      </div>
 
