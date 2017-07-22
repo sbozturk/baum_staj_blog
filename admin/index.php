@@ -23,8 +23,7 @@ require_once "sidemenu.php"
                   <div class="panel-title">Articles</div>
 
                 <div class="panel-options">
-                  <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-                  <a href="?" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+                  <a href="?" data-rel="reload"><i class="glyphicon glyphicon-refresh"></i></a>
                 </div>
                 </div>
                 <div class="content-box-large box-with-header">
@@ -34,7 +33,7 @@ require_once "sidemenu.php"
                   if ($query->rowCount()) {
                     foreach ($query as $row) { ?>
                     <ul>
-                      <li><a href="update.php?updateArticle=<?php echo $row["aid"];?>"><?php echo $row["articleName"];?> (<?php echo $row["articleTime"];?>)</a></li>
+                      <li><a href="updateArticle.php?updateArticle=<?php echo $row["aid"];?>"><?php echo $row["articleName"];?> (<?php echo $row["articleTime"];?>)</a></li>
                     </ul>
                     <?php
                                 }
@@ -55,13 +54,38 @@ require_once "sidemenu.php"
 			  					<div class="panel-title">Waiting Comments</div>
 
 								<div class="panel-options">
-									<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-									<a href="?" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+									<a href="?" data-rel="reload"><i class="glyphicon glyphicon-refresh"></i></a>
 								</div>
 				  			</div>
 				  			<div class="content-box-large box-with-header">
 
-                değiştir1
+                  <!-- commentlist -->
+
+
+
+                       <?php
+                       $query = $db -> query("SELECT * FROM comment WHERE  commentPermission='0' ORDER BY commentTime DESC", PDO::FETCH_ASSOC);
+                       if ($query->rowCount()) {
+                         foreach ($query as $row) { ?>
+                           <ul class="commentlist">
+                           <li>
+                        <div class="comment-content">
+                          <div class="comment-info">
+                             <cite><?php echo $row["commentName"];?></cite>
+                             <div class="comment-meta">
+                                <time class="comment-time" datetime="2014-07-12T23:05"><?php echo $row["commentTime"];?></time>
+                             </div>
+                          </div>
+                          <div class="comment-text">
+                             <p><?php echo $row["commentContent"];?></p>
+                          </div>
+                       </div>
+                     </li>
+                  </ul> <!-- Commentlist End -->
+                  <?php
+                              }
+                            }
+                            ?>
 
                     <br /><br />
 							</div>

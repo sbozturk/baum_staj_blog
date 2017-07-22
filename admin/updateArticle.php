@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Add an Article</title>
+    <title>Update Article</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- jQuery UI -->
     <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" media="screen">
@@ -29,30 +29,37 @@
 	  				<div class="col-md-6">
 	  					<div class="content-box-large">
 			  				<div class="panel-heading">
-					            <div class="panel-title">New Article</div>
+					            <div class="panel-title">Update Article</div>
 
 					            <div class="panel-options">
 					              <a href="?" data-rel="reload"><i class="glyphicon glyphicon-refresh"></i></a>
 					            </div>
 					        </div>
 			  				<div class="panel-body">
-			  					<form class="form-horizontal" action="save.php" method="post" role="form">
+                  <?php
+                  $query = $db -> query("SELECT * FROM article
+                  INNER JOIN category ON category.cid = article.articleCategory
+                  INNER JOIN user ON user.uid = article.articleUser WHERE article.aid = $_GET[updateArticle]", PDO::FETCH_ASSOC);
+                  if ($query->rowCount()) {
+                    foreach ($query as $row) { ?>
+			  					<form class="form-horizontal" action="update.php" method="post" role="form">
 								  <div class="form-group">
 								    <label for="articleName" class="col-sm-2 control-label">Article Name</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" id="articleName" name="articleName" required ="true">
+                      <input type="hidden" class="form-control" id="articleId" name="articleId" value="<?php echo $row["aid"]; ?>">
+								      <input type="text" class="form-control" id="articleName" name="articleName" value="<?php echo $row["articleName"]; ?>" required ="true">
 								    </div>
 								  </div>
 								  <div class="form-group">
 								    <label for="articleContent" label class="col-sm-2 control-label">Article Content</label>
 								    <div class="col-sm-10">
-								      <textarea type="text" class="form-control" id="articleContent" name="articleContent" rows="5" required ="true"></textarea>
+								      <textarea type="text" class="form-control" id="articleContent" name="articleContent" rows="5" required ="true"><?php echo $row["articleContent"]; ?></textarea>
 								    </div>
 								  </div>
                   <div class="form-group">
                    <label for="articleTag" class="col-sm-2 control-label"> Tags</label>
                    <div class="col-sm-10">
-                     <input type="text" class="form-control" id="articleTag" name="articleTag" placeholder="Put space beetwen tags" required ="true">
+                     <input type="text" class="form-control" id="articleTag" name="articleTag" value="<?php echo $row["articleTag"]; ?>" required ="true">
                    </div>
                  </div>
                  <div class="form-group">
@@ -84,7 +91,10 @@
 			  				</div>
 			  			</div>
 	  				</div>
-
+            <?php
+                        }
+                      }
+                      ?>
 	  		<!--  Page content -->
 		  </div>
 		</div>
