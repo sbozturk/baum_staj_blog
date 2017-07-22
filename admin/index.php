@@ -132,8 +132,46 @@ require_once "sidemenu.php"
               </div>
               <div class="content-box-large box-with-header">
 
-                Pellentesque luctus quam quis consequat vulputate. Sed sit amet diam ipsum. Praesent in pellentesque diam, sit amet dignissim erat. Aliquam erat volutpat. Aenean laoreet metus leo, laoreet feugiat enim suscipit quis. Praesent mauris mauris, ornare vitae tincidunt sed, hendrerit eget augue. Nam nec vestibulum nisi, eu dignissim nulla.
-              <br /><br />
+    <form action="addAdmin.php" method="post">
+                <div class="form-group">
+                <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="userName" placeholder="Name" class="form-control" type="text">
+                        </div>
+
+                </div>
+
+                <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="userSurname" placeholder="Surname" class="form-control" type="text">
+                        </div>
+
+                </div>
+
+                <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input name="userEmail" placeholder="E-Mail Address" class="form-control" type="text">
+                        </div>
+
+                </div>
+
+                <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input name="userPassword" placeholder="Password" class="form-control" type="password">
+                        </div>
+
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                        <button type="submit" class="btn btn-lg btn-block btn-primary">Send
+                        </button>
+                </div>
+</form>
+
             </div>
             </div>
           </div>
