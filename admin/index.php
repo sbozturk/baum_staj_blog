@@ -60,9 +60,6 @@ require_once "sidemenu.php"
 				  			<div class="content-box-large box-with-header">
 
                   <!-- commentlist -->
-
-
-
                        <?php
                        $query = $db -> query("SELECT * FROM comment WHERE  commentPermission='0' ORDER BY commentTime DESC", PDO::FETCH_ASSOC);
                        if ($query->rowCount()) {
@@ -93,6 +90,55 @@ require_once "sidemenu.php"
 		  			</div>
 
 		  		</div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="content-box-header">
+                <div class="panel-title">Add Category</div>
+
+              <div class="panel-options">
+                <a href="?" data-rel="reload"><i class="glyphicon glyphicon-refresh"></i></a>
+              </div>
+              </div>
+              <div class="content-box-large box-with-header">
+
+                <form class="form-horizontal" action="addCategory.php" method="post" role="form">
+                <div class="form-group">
+                  <label for="articleName" class="col-sm-2 control-label">Category Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="categoryName" name="categoryName" required ="true">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                  </div>
+                </div>
+                </form>
+
+            </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="content-box-header">
+                <div class="panel-title">Add Admin</div>
+
+              <div class="panel-options">
+                <a href="?" data-rel="reload"><i class="glyphicon glyphicon-refresh"></i></a>
+              </div>
+              </div>
+              <div class="content-box-large box-with-header">
+
+                Pellentesque luctus quam quis consequat vulputate. Sed sit amet diam ipsum. Praesent in pellentesque diam, sit amet dignissim erat. Aliquam erat volutpat. Aenean laoreet metus leo, laoreet feugiat enim suscipit quis. Praesent mauris mauris, ornare vitae tincidunt sed, hendrerit eget augue. Nam nec vestibulum nisi, eu dignissim nulla.
+              <br /><br />
+            </div>
+            </div>
+          </div>
+
+
 		  	</div>
 
 <?php require_once "footer.php" ?>
