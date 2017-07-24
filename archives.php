@@ -20,10 +20,6 @@
 
    			<section class="page">
 
-					<h2>Archives.</h2>
-
-					<p class="lead">Lorem ipsum Nisi enim est proident est magna occaecat dolore proident eu ex sunt consectetur consectetur dolore enim nisi exercitation adipisicing magna culpa commodo deserunt ut do Ut occaecat. Lorem ipsum Veniam consequat quis.</p>
-
 					<div class="row archive-list">
 
 						<div class="twelve columns">
@@ -42,20 +38,6 @@
                           ?>
 						</div>
 
-						<div class="twelve columns">
-
-							<h4>Archives By Month.</h4>
-
-					      	<ul>
-					        		<li><a href="">July 2013</a></li>
-					      		<li><a href="">August 2013</a></li>
-					      		<li><a href="">September 2013</a></li>
-					      		<li><a href="">October 2013</a></li>
-					      		<li><a href="">November 2013</a></li>
-					      		<li><a href="">December 2013</a></li>
-					      	</ul>
-
-						</div>
 
 					</div> <!-- end row -->
 

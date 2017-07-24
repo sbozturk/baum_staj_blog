@@ -2,9 +2,9 @@
 
   <div class="widget widget_search">
             <h3>Search</h3>
-            <form action="#">
+            <form action="search.php" method="post">
 
-               <input type="text" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+               <input type="text" name="search" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
                <input type="submit" value="" class="submit-search">
 
             </form>
@@ -15,25 +15,33 @@
            <?php include "categories.php"; ?>
          </div>
 
-
-
-  <div class="widget widget_text group">
-    <h3>Widget Text.</h3>
-
-    <p>Lorem ipsum Ullamco commodo laboris sit dolore commodo aliquip incididunt fugiat esse dolor aute fugiat minim eiusmod do velit labore fugiat officia ad sit culpa labore in consectetur sint cillum sint consectetur voluptate adipisicing Duis irure magna ut sit amet reprehenderit.</p>
-
-  </div>
-
   <?php require_once "tags.php"; ?>
 
       <div class="widget widget_popular">
-         <h3>Popular Post.</h3>
+         <h3>Popular Posts.</h3>
+         <?php
+         $query = $db -> query("SELECT comment.commentArticle, COUNT(*) AS commentNumber
+    FROM comment INNER JOIN article
+		ON article.aid=comid
+		GROUP BY commentArticle ORDER BY commentNumber DESC LIMIT 3", PDO::FETCH_ASSOC);
+         if ($query->rowCount()) {
+           foreach ($query as $row) { ?>
+             <ul class="link-list">
+                <li><a href="single.php?article=<?php echo $row["commentArticle"];?>"><?php
+                $commentArticle =  $row["commentArticle"];
+                $query = $db -> query("SELECT * FROM article WHERE aid=$commentArticle", PDO::FETCH_ASSOC);
+                if ($query->rowCount()) {
+                  foreach ($query as $row) {
+  				      	echo $row["articleName"];
+                              }
+                            }
+                            ?>.</a></li>
 
-         <ul class="link-list">
-            <li><a href="#">Sint cillum consectetur voluptate.</a></li>
-            <li><a href="#">Lorem ipsum Ullamco commodo.</a></li>
-            <li><a href="#">Fugiat minim eiusmod do.</a></li>
-         </ul>
+           </ul> <!-- end #nav -->
+           <?php
+                       }
+                     }
+                     ?>
 
       </div>
 

@@ -5,7 +5,6 @@
             <ul class="nav">
                 <!-- Main menu -->
                 <li class="current"><a href="index.php"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
-                <li><a href="buttons.php"><i class="glyphicon glyphicon-record"></i> Buttons</a></li>
                 <li><a href="forms.php"><i class="glyphicon glyphicon-tasks"></i> Add an Article</a></li>
             </ul>
          </div>

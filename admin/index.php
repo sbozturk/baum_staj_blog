@@ -78,7 +78,18 @@ require_once "sidemenu.php"
                           </div>
                        </div>
                      </li>
-                  </ul> <!-- Commentlist End -->
+                  </ul>
+                  <form class="form-horizontal" action="commentRespond.php" method="post" role="form">
+                    <input type="hidden" class="form-control" id="commentId" name="commentId" value="<?php echo $row["comid"]; ?>">
+                  <label>
+                  <input type="radio" name="Accept" value="Accept" id="Accept">
+                  Accept</label>
+                  <label>
+                  <input type="radio" name="Accept" value="Decline" id="Decline">
+                  Decline</label>
+                  <input type="submit" value="Submit">
+                  <br><hr><br>
+                </form>
                   <?php
                               }
                             }

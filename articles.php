@@ -12,11 +12,10 @@
    	<div class="row">
 
       <div id="main" class="eight columns">
-        
           <?php
           $query = $db -> query("SELECT * FROM article
           INNER JOIN category ON category.cid = article.articleCategory
-          INNER JOIN user ON user.uid = article.articleUser ORDER BY articleTime DESC LIMIT 1", PDO::FETCH_ASSOC);
+          INNER JOIN user ON user.uid = article.articleUser ORDER BY articleTime DESC", PDO::FETCH_ASSOC);
           if ($query->rowCount()) {
             foreach ($query as $row) { ?>
 
