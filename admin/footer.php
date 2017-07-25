@@ -1,13 +1,10 @@
 <footer>
-     <div class="container">
-
+    <div class="container">
         <div class="copy text-center">
-           Copyright 2017 <a href='https://www.github.com/sbozturk'>Website</a>
+            Copyright 2017 <a href='https://www.github.com/sbozturk'>Website</a>
         </div>
-
-     </div>
-  </footer>
-
+    </div>
+</footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
