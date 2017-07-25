@@ -53,7 +53,7 @@
 								  <div class="form-group">
 								    <label for="articleContent" label class="col-sm-2 control-label">Article Content</label>
 								    <div class="col-sm-10">
-								      <textarea type="text" class="form-control" id="articleContent" name="articleContent" rows="5" required ="true"><?php echo $row["articleContent"]; ?></textarea>
+								      <textarea type="text" class="form-control" id="ckeditor_standard" name="articleContent" rows="5" required ="true"><?php echo $row["articleContent"]; ?></textarea>
 								    </div>
 								  </div>
                   <div class="form-group">

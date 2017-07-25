@@ -6,5 +6,5 @@ $cemail = $_POST['cEmail'];
 $carticle = $_POST['articleId'];
 $statement = $db->prepare("INSERT INTO comment (commentName, commentContent, commentEmail, commentArticle) VALUES (?, ?, ?, ?)");
 $statement->execute(array($cname, $cmessage, $cemail, $carticle));
-header("Refresh: 1; url=single.php?article=$carticle");
+header("Refresh: 0; url=single.php?article=$carticle");
 ?>
