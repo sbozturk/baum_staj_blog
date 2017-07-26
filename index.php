@@ -19,14 +19,14 @@
             <article class="entry">
                 <header class="entry-header">
                     <h2 class="entry-title">
-                        <a href="single.php?article=<?php echo $row[" aid"];?>"
+                        <a href="single.php?article=<?php echo $row["aid"];?>"
                         title=""><?php echo $row["articleName"];?></a>
                     </h2>
                     <div class="entry-meta">
                         <ul>
                             <li><?php echo $row["articleTime"]; ?></li>
                             <span class="meta-sep">&bull;</span>
-                            <li><a href="categoryPage.php?category=<?php echo $row[" categoryName"];?>" title=""
+                            <li><a href="categoryPage.php?category=<?php echo $row["categoryName"];?>" title=""
                                 rel="category tag"><?php echo $row["categoryName"];?></a></li>
                             <span class="meta-sep">&bull;</span>
                             <li><?php echo $row["userName"];?> <?php echo $row["userSurname"];?></li>

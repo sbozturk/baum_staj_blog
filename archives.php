@@ -19,8 +19,7 @@
                         if ($query->rowCount()) {
                         foreach ($query as $row) { ?>
                         <ul>
-                            <li><a href="single.php?article=<?php echo $row["
-                                   aid"];?>"><?php echo $row["articleName"];?></a></li>
+                            <li><a href="single.php?article=<?php echo $row["aid"];?>"><?php echo $row["articleName"];?></a></li>
                         </ul>
                         <?php
                             }
@@ -40,7 +39,7 @@
                         if ($query->rowCount()) {
                         foreach ($query as $row) { ?>
                         <ul>
-                            <li><a href="<?php echo $row[" menuFolderName"];?>.php"><?php $name = $row["menuName"];
+                            <li><a href="<?php echo $row["menuFolderName"];?>.php"><?php $name = $row["menuName"];
                   $name = strtolower($name);
                   $name = ucwords($name);
                   echo $name;

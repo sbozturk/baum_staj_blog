@@ -23,7 +23,7 @@
         if ($query->rowCount()) {
         foreach ($query as $row) { ?>
         <ul class="link-list">
-            <li><a href="single.php?article=<?php echo $row[" commentArticle"];?>"><?php
+            <li><a href="single.php?article=<?php echo $row["commentArticle"];?>"><?php
                 $commentArticle =  $row["commentArticle"];
                 $query = $db -> query("SELECT * FROM article WHERE aid=$commentArticle", PDO::FETCH_ASSOC);
                 if ($query->rowCount()) {

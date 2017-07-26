@@ -42,9 +42,9 @@
                             <label for="articleName" class="col-sm-2 control-label">Article Name</label>
                             <div class="col-sm-10">
                                 <input type="hidden" class="form-control" id="articleId" name="articleId"
-                                       value="<?php echo $row[" aid"]; ?>">
+                                       value="<?php echo $row["aid"]; ?>">
                                 <input type="text" class="form-control" id="articleName" name="articleName"
-                                       value="<?php echo $row[" articleName"]; ?>" required ="true">
+                                       value="<?php echo $row["articleName"]; ?>" required ="true">
                             </div>
                         </div>
                         <div class="form-group">
@@ -58,7 +58,7 @@
                             <label for="articleTag" class="col-sm-2 control-label"> Tags</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="articleTag" name="articleTag"
-                                       value="<?php echo $row[" articleTag"]; ?>" required ="true">
+                                       value="<?php echo $row["articleTag"]; ?>" required ="true">
                             </div>
                         </div>
                         <div class="form-group">
@@ -71,8 +71,7 @@
               $query = $db -> query("SELECT * FROM category ORDER BY categoryName", PDO::FETCH_ASSOC);
                                         if ($query->rowCount()) {
                                         foreach ($query as $row) { ?>
-                                        <option value="<?php echo $row[" cid
-                                        "];?>"><?php echo $row["categoryName"];?></option>
+                                        <option value="<?php echo $row[" cid"];?>"><?php echo $row["categoryName"];?></option>
                                         <?php
                             }
                           }

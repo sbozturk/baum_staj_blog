@@ -30,8 +30,7 @@ require_once "sidemenu.php"
                         if ($query->rowCount()) {
                         foreach ($query as $row) { ?>
                         <ul>
-                            <li><a href="updateArticle.php?updateArticle=<?php echo $row["
-                                   aid"];?>"><?php echo $row["articleName"];?> (<?php echo $row["articleTime"];?>)</a>
+                            <li><a href="updateArticle.php?updateArticle=<?php echo $row["aid"];?>"><?php echo $row["articleName"];?> (<?php echo $row["articleTime"];?>)</a>
                             </li>
                         </ul>
                         <?php
@@ -78,7 +77,7 @@ require_once "sidemenu.php"
                         </ul>
                         <form class="form-horizontal" action="commentRespond.php" method="post" role="form">
                             <input type="hidden" class="form-control" id="commentId" name="commentId"
-                                   value="<?php echo $row[" comid"]; ?>">
+                                   value="<?php echo $row["comid"]; ?>">
                             <label>
                                 <input type="radio" name="Accept" value="Accept" id="Accept">
                                 Accept</label>

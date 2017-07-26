@@ -20,7 +20,7 @@
             <article class="entry">
                 <header class="entry-header">
                     <h2 class="entry-title">
-                        <a href="single.php?article=<?php echo $row[" aid"];?>"
+                        <a href="single.php?article=<?php echo $row["aid"];?>"
                         title=""><?php echo $row["articleName"];?></a>
                     </h2>
                     <div class="entry-meta">
@@ -41,12 +41,6 @@
                     }
                   }
                   ?>
-            <div class="pagenav">
-                <p>
-                    <a rel="prev" href="#">Prev</a>
-                    <a rel="next" href="#">Next</a>
-                </p>
-            </div>
         </div> <!-- end main -->
         <?php require_once "sidebar.php"; ?>
     </div> <!-- end row -->

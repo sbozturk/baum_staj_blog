@@ -48,13 +48,13 @@
                 </p>
                 <ul class="post-nav group">
                     <li class="prev"><a rel="prev" href="single.php?article=<?php
-                    if($row[" aid"]!="1"){
+                    if($row["aid"]!="1"){
                         echo $row["aid"]-1;
                         } else {
                         echo $row["aid"];
                         }
                         ?>"><strong>Previous Article</strong></a></li>
-                    <li class="next"><a rel="next" href="single.php?article=<?php echo $row[" aid"]+1;?>"><strong>Next
+                    <li class="next"><a rel="next" href="single.php?article=<?php echo $row["aid"]+1;?>"><strong>Next
                         Article</strong></a></li>
                 </ul>
             </article>
@@ -116,7 +116,7 @@
                                 <label for="cMessage">Message <span class="required">*</span></label>
                                 <textarea name="cMessage" id="cMessage" rows="10" cols="50"></textarea>
                             </div>
-                            <input type="hidden" name="articleId" value="<?php echo $_GET[" article"]; ?>">
+                            <input type="hidden" name="articleId" value="<?php echo $_GET["article"]; ?>">
                             <button type="submit" class="submit">Submit</button>
                         </fieldset>
                     </form> <!-- Form End -->

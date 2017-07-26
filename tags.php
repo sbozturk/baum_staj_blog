@@ -5,7 +5,7 @@
          $query = $db -> query("SELECT * FROM tag", PDO::FETCH_ASSOC);
         if ($query->rowCount()) {
         foreach ($query as $row) { ?>
-        <a href="tagPage.php?tag=<?php echo $row[" tagName"];?>"><?php echo $row["tagName"];?></a>
+        <a href="tagPage.php?tag=<?php echo $row["tagName"];?>"><?php echo $row["tagName"];?></a>
         <?php
                       }
                     }
