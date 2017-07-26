@@ -19,7 +19,7 @@
             margin-top: 20%;
         }
     </style>
-    <title>Registration</title>
+    <title>Sign In</title>
 </head>
 <body style="background-color:#6E6E6E;">
 <div class="container">
