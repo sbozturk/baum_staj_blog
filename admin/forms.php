@@ -62,8 +62,7 @@
               $query = $db -> query("SELECT * FROM category ORDER BY categoryName", PDO::FETCH_ASSOC);
                                         if ($query->rowCount()) {
                                         foreach ($query as $row) { ?>
-                                        <option value="<?php echo $row[" cid
-                                        "];?>"><?php echo $row["categoryName"];?></option>
+                                        <option value="<?php echo $row["cid"];?>"><?php echo $row["categoryName"];?></option>
                                         <?php
                             }
                           }
